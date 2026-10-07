@@ -1,0 +1,2036 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MODDA CAR TUNNING</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #03050a;
+            color: white;
+        }
+
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+
+            background: rgba(0, 0, 0, 0.95);
+
+            border-bottom: 2px solid #008cff;
+
+            box-shadow: 0 0 20px #008cff;
+
+            z-index: 1000;
+        }
+
+        .menu {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 18px 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            color: white;
+
+            text-shadow: 0 0 15px #008cff;
+        }
+
+        .logo span {
+            color: #008cff;
+        }
+
+        .links {
+            display: flex;
+
+            gap: 25px;
+
+            list-style: none;
+        }
+
+        .links a {
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            color: #00aaff;
+
+            text-shadow: 0 0 10px #008cff;
+        }
+
+
+        /* =========================
+           INICIO
+        ========================= */
+
+        .inicio {
+            min-height: 100vh;
+
+            padding: 130px 30px 70px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 130, 255, 0.25),
+                    transparent 45%
+                ),
+                #03050a;
+        }
+
+        .inicio-contenido {
+            max-width: 1200px;
+
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .texto h1 {
+            font-size: 70px;
+
+            font-style: italic;
+
+            text-shadow: 0 0 25px #008cff;
+        }
+
+        .texto h1 span {
+            color: #008cff;
+        }
+
+        .texto h2 {
+            margin-top: 20px;
+
+            font-size: 35px;
+        }
+
+        .texto h2 span {
+            color: #008cff;
+        }
+
+        .texto p {
+            margin-top: 20px;
+
+            color: #b8c4d2;
+
+            font-size: 18px;
+
+            line-height: 1.6;
+        }
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 15px 30px;
+
+            background: #008cff;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 25px #008cff;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: translateY(-5px);
+
+            background: #00aaff;
+
+            box-shadow: 0 0 40px #00aaff;
+        }
+
+
+        /* =========================
+           IMAGEN PRINCIPAL
+        ========================= */
+
+        .imagen-principal {
+            text-align: center;
+        }
+
+        .imagen-principal img {
+            width: 100%;
+
+            max-width: 480px;
+
+            border-radius: 20px;
+
+            border: 2px solid #008cff;
+
+            box-shadow:
+                0 0 25px #008cff,
+                0 0 60px rgba(0, 140, 255, 0.4);
+        }
+
+
+        /* =========================
+           ACCESORIOS
+        ========================= */
+
+        .accesorios {
+            padding: 90px 30px;
+
+            background: #070b12;
+        }
+
+        .titulo {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .titulo h2 {
+            font-size: 40px;
+
+            font-style: italic;
+        }
+
+        .titulo span {
+            color: #008cff;
+        }
+
+        .titulo p {
+            margin-top: 10px;
+
+            color: #9da9b8;
+        }
+
+
+        /* =========================
+           TARJETAS
+        ========================= */
+
+        .tarjetas {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .tarjeta {
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d1724,
+                    #03060c
+                );
+
+            border: 1px solid #14547e;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+
+            border-color: #008cff;
+
+            box-shadow:
+                0 0 25px rgba(0, 140, 255, 0.5);
+        }
+
+        .imagen-accesorio {
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            border-bottom: 2px solid #008cff;
+
+            transition: 0.4s;
+        }
+
+        .tarjeta:hover .imagen-accesorio {
+            transform: scale(1.05);
+        }
+
+        .contenido-tarjeta {
+            padding: 25px;
+        }
+
+        .contenido-tarjeta h3 {
+            margin-bottom: 12px;
+
+            font-size: 22px;
+        }
+
+        .contenido-tarjeta p {
+            color: #9da9b8;
+
+            line-height: 1.5;
+        }
+
+        .precio {
+            display: block;
+
+            margin-top: 15px;
+
+            color: #00aaff;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           BOTÓN MODELOS
+        ========================= */
+
+        .btn-modelos {
+            margin-top: 18px;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #008cff;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-modelos:hover {
+            background: #00aaff;
+
+            transform: scale(1.05);
+
+            box-shadow: 0 0 20px #008cff;
+        }
+
+
+        /* =========================
+           VENTANA DE MODELOS
+        ========================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            z-index: 3000;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.85);
+
+            overflow-y: auto;
+
+            padding: 50px 20px;
+        }
+
+        .modal-contenido {
+            max-width: 1100px;
+
+            margin: auto;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d1724,
+                    #03060c
+                );
+
+            border: 2px solid #008cff;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 0 30px #008cff;
+        }
+
+        .cerrar {
+            float: right;
+
+            font-size: 35px;
+
+            font-weight: bold;
+
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .cerrar:hover {
+            color: #008cff;
+        }
+
+        .modal-titulo {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .modal-titulo h2 {
+            font-size: 35px;
+
+            color: #008cff;
+        }
+
+        .modal-titulo p {
+            margin-top: 10px;
+
+            color: #aeb8c5;
+        }
+
+
+        /* =========================
+           MODELOS
+        ========================= */
+
+        .modelos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .modelo {
+            background: #080e17;
+
+            border: 1px solid #174f75;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .modelo:hover {
+            border-color: #008cff;
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 0 20px rgba(0, 140, 255, 0.4);
+        }
+
+        .modelo img {
+            width: 100%;
+
+            height: 180px;
+
+            object-fit: cover;
+        }
+
+        .modelo-info {
+            padding: 18px;
+        }
+
+        .modelo-info h3 {
+            color: white;
+
+            margin-bottom: 10px;
+        }
+
+        .modelo-info p {
+            color: #9da9b8;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        .modelo-precio {
+            display: block;
+
+            margin-top: 12px;
+
+            color: #00aaff;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           GALERÍA
+        ========================= */
+
+        .galeria {
+            padding: 90px 30px;
+
+            background: #03050a;
+        }
+
+        .galeria-contenido {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .galeria img {
+            width: 100%;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            border: 2px solid #008cff;
+
+            box-shadow:
+                0 0 20px rgba(0, 140, 255, 0.4);
+
+            transition: 0.3s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.03);
+
+            box-shadow:
+                0 0 35px #008cff;
+        }
+
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            padding: 90px 30px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 130, 255, 0.2),
+                    transparent 50%
+                ),
+                #050810;
+        }
+
+        .formulario {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            background: #0a101b;
+
+            border: 1px solid #14547e;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 30px rgba(0, 140, 255, 0.2);
+        }
+
+        .formulario input,
+        .formulario textarea {
+            width: 100%;
+
+            margin-bottom: 15px;
+
+            padding: 15px;
+
+            background: #03060b;
+
+            border: 1px solid #245171;
+
+            border-radius: 8px;
+
+            color: white;
+
+            outline: none;
+        }
+
+        .formulario input:focus,
+        .formulario textarea:focus {
+            border-color: #008cff;
+
+            box-shadow:
+                0 0 10px rgba(0, 140, 255, 0.4);
+        }
+
+        .formulario textarea {
+            height: 120px;
+
+            resize: none;
+        }
+
+        .formulario button {
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #008cff;
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 20px rgba(0, 140, 255, 0.5);
+        }
+
+        .formulario button:hover {
+            background: #00aaff;
+        }
+
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #020308;
+
+            border-top: 1px solid #12334d;
+
+            color: #8b98a8;
+        }
+
+        footer strong {
+            color: #008cff;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .tarjetas {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .modelos {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .menu {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .links {
+                gap: 15px;
+            }
+
+            .inicio-contenido {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .texto h1 {
+                font-size: 50px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .links {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .texto h1 {
+                font-size: 42px;
+            }
+
+            .texto h2 {
+                font-size: 25px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .modelos {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-contenido {
+                grid-template-columns: 1fr;
+            }
+
+            .modal {
+                padding: 20px 10px;
+            }
+
+            .modal-contenido {
+                padding: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENÚ
+    ========================== -->
+
+    <nav>
+
+        <div class="menu">
+
+            <div class="logo">
+                MODA <span>CAR TUNNING CERRO DE PASCO</span>
+            </div>
+
+            <ul class="links">
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#accesorios">Accesorios</a>
+                </li>
+
+                <li>
+                    <a href="#galeria">Galería</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         INICIO
+    ========================== -->
+
+    <section class="inicio" id="inicio">
+
+        <div class="inicio-contenido">
+
+            <div class="texto">
+
+                <h1>
+                    MODA
+                    <span>CAR TUNING  
+
+                    </span>CERRO DE PASCO
+                </h1>
+
+                <h2>
+                    ACCESORIOS
+                    <span>PARA TU AUTO</span>
+                </h2>
+
+                <p>
+                    Personalizamos tu vehículo con accesorios modernos,
+                    iluminación, sonido, seguridad y mucho más.
+                </p>
+
+                <a
+                    href="#accesorios"
+                    class="boton"
+                >
+                    VER ACCESORIOS
+                </a>
+
+            </div>
+
+
+            <div class="imagen-principal">
+
+                <img
+                    src="IMAGENES/MODA.png"
+                    alt="MODDA CAR TUNNING"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACCESORIOS
+    ========================== -->
+
+    <section
+        class="accesorios"
+        id="accesorios"
+    >
+
+        <div class="titulo">
+
+            <h2>
+                NUESTROS
+                <span>ACCESORIOS</span>
+            </h2>
+
+            <p>
+                Selecciona un accesorio para ver todos sus modelos.
+            </p>
+
+        </div>
+
+
+        <div class="tarjetas">
+
+
+            <!-- ==================================================
+                 1. LUCES LED
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO LUZ.jpg"
+                    alt="Luces LED"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>LUCES LED</h3>
+
+                    <p>
+                        Iluminación moderna para mejorar
+                        el estilo y visibilidad.
+                    </p>
+
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('luces')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 2. POLARIZADOS
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO POLARIZADO.jpg"
+                    alt="Polarizados"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>POLARIZADOS</h3>
+
+                    <p>
+                        Dale un aspecto elegante y deportivo
+                        a tu automóvil.
+                    </p>
+
+                  
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('polarizados')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 3. CUBREASIENTOS
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO ASIENTOS.jpg"
+                    alt="Cubreasientos"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>CUBREASIENTOS</h3>
+
+                    <p>
+                        Protege y mejora el interior
+                        de tu vehículo.
+                    </p>
+
+                  
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('asientos')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 4. PORTA EQUIPAJE
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO PORTAEQUIPAJE.jpg"
+                    alt="Porta equipaje"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>PORTA EQUIPAJE</h3>
+
+                    <p>
+                        Más espacio para transportar
+                        tus objetos.
+                    </p>
+
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('equipaje')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 5. ADORNOS 
+            =================================================== -->
+<div class="tarjeta">
+
+    <img
+        class="imagen-accesorio"
+        src="IMAGENES/FONDO ADORNOS.jpg"
+        alt="Adornos"
+    >
+
+    <div class="contenido-tarjeta">
+
+        <h3>ADORNOS</h3>
+
+        <p>
+            Adornos y detalles personalizados
+            para darle un estilo único a tu vehículo.
+        </p>
+
+        <button
+            class="btn-modelos"
+            onclick="abrirModal('adornos')"
+        >
+            VER MODELOS
+        </button>
+
+    </div>
+
+</div>
+
+
+            <!-- ==================================================
+                 6. ALERONES 
+            =================================================== -->
+<div class="tarjeta">
+
+    <img
+        class="imagen-accesorio"
+        src="IMAGENES/FONDO ALERONES.jpg"
+        alt="Alerones"
+    >
+
+    <div class="contenido-tarjeta">
+
+        <h3>ALERONES</h3>
+
+        <p>
+            Alerones deportivos para darle
+            un estilo más agresivo a tu vehículo.
+        </p>
+
+        <button
+            class="btn-modelos"
+            oonclick="abrirModal('alerones')"
+        >
+            VER MODELOS
+        </button>
+
+    </div>
+
+</div>
+
+
+            <!-- ==================================================
+                 7. PANTALLAS
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO PANTALLA.jpeg"
+                    alt="Pantallas"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>PANTALLAS</h3>
+
+                    <p>
+                        Pantallas multimedia para
+                        entretenimiento y navegación.
+                    </p>
+
+                   
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('pantallas')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 8. PERILLAS
+            =================================================== -->
+
+           <div class="tarjeta">
+
+    <img
+        class="imagen-accesorio"
+        src="IMAGENES/FONDO PERRILLA.jpg"
+        alt="Perillas"
+    >
+
+    <div class="contenido-tarjeta">
+
+        <h3>PERILLAS</h3>
+
+        <p>
+            Perillas deportivas y personalizadas
+            para mejorar el interior de tu vehículo.
+        </p>
+
+        <button
+            class="btn-modelos"
+            onclick="abrirModal('perillas')"
+        >
+            VER MODELOS
+        </button>
+
+    </div>
+
+</div>
+
+
+            <!-- ==================================================
+                 9. AROS
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO AROS.jpg"
+                    alt="Aros deportivos"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>AROS DEPORTIVOS</h3>
+
+                    <p>
+                        Aros deportivos para darle
+                        un estilo más moderno.
+                    </p>
+
+                    
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('aros')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 10. SPOILERS
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO SPOILER.jpg"
+                    alt="Spoilers"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>SPOILERS</h3>
+
+                    <p>
+                        Spoilers deportivos para
+                        personalizar tu automóvil.
+                    </p>
+
+                    
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('spoilers')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 11. VOLANTES
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO VOLANTE.jpg"
+                    alt="Volantes deportivos"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>VOLANTES</h3>
+
+                    <p>
+                        Volantes deportivos para mejorar
+                        el estilo interior.
+                    </p>
+
+                    
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('volantes')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 12. ALFOMBRAS
+            =================================================== -->
+
+            <div class="tarjeta">
+
+                <img
+                    class="imagen-accesorio"
+                    src="IMAGENES/FONDO ALFOMBRAS.jpg"
+                    alt="Alfombras"
+                >
+
+                <div class="contenido-tarjeta">
+
+                    <h3>ALFOMBRAS</h3>
+
+                    <p>
+                        Alfombras personalizadas para
+                        proteger el interior.
+                    </p>
+
+
+                    <button
+                        class="btn-modelos"
+                        onclick="abrirModal('alfombras')"
+                    >
+                        VER MODELOS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         VENTANA DE MODELOS
+    ========================================================== -->
+
+    <div
+        id="modal"
+        class="modal"
+        onclick="cerrarFuera(event)"
+    >
+
+        <div class="modal-contenido">
+
+            <span
+                class="cerrar"
+                onclick="cerrarModal()"
+            >
+                &times;
+            </span>
+
+            <div
+                id="contenidoModal"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         GALERÍA
+    ========================== -->
+
+    <section
+        class="galeria"
+        id="galeria"
+    >
+
+        <div class="titulo">
+
+            <h2>
+                GALERÍA
+                <span>MODA</span>
+            </h2>
+
+            <p>
+                Algunos de nuestros diseños.
+            </p>
+
+        </div>
+
+        <div class="galeria-contenido">
+
+            <img
+                src="IMAGENES/MODA 1.jpeg"
+                alt="Accesorios MODDA"
+            >
+
+            <img
+                src="IMAGENES/MODA 2.jpeg"
+                alt="Auto MODDA"
+            >
+
+            <img
+                src="IMAGENES/MODA 3.jpeg"
+                alt="Tuning MODDA"
+            >
+
+            <img
+                src="IMAGENES/MODA.png"
+                alt="Personalización de vehículos"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section
+        class="contacto"
+        id="contacto"
+    >
+
+        <div class="titulo">
+
+            <h2>
+                CONTÁCTA<span>NOS</span>
+            </h2>
+
+            <p>
+                Solicita información sobre nuestros accesorios.
+            </p>
+
+        </div>
+
+        <form class="formulario">
+
+            <input
+                type="text"
+                placeholder="Nombre completo"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Número de teléfono"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Marca de tu vehículo"
+            >
+
+            <input
+                type="text"
+                placeholder="Modelo de tu vehículo"
+            >
+
+            <textarea
+                placeholder="¿Qué accesorio necesitas?"
+            ></textarea>
+
+            <button type="submit">
+                ENVIAR CONSULTA
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <strong>MODA CAR TUNNING</strong>
+        </p>
+
+        <p>
+            Cerro de Pasco - Perú
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+        <script>
+
+const modal = document.getElementById("modal");
+const contenidoModal = document.getElementById("contenidoModal");
+
+const accesorios = {
+
+    luces: {
+        titulo: "MODELOS DE LUCES LED",
+        descripcion: "Elige el tipo de iluminación que deseas para tu vehículo.",
+        modelos: [
+            {
+                nombre: "LED D4S",
+                imagen: "IMAGENES/FOCOS LED D4S.jpg",
+                descripcion: "Luz LED de alta intensidad para vehículos con sistema D4S.",
+                precio: "S/ 650"
+            },
+            {
+                nombre: "LED FAROS AUXILIARES 2 LUPAS",
+                imagen: "IMAGENES/FAROS LED LUPA 2.jpg",
+                descripcion: "Iluminación LED con excelente brillo y duración.",
+                precio: "S/ 70"
+            },
+            {
+                nombre: "LED H11 PRO",
+                imagen: "IMAGENES/H11.jpg",
+                descripcion: "Ideal para faros y luces antiniebla.",
+                precio: "S/ 350"
+            },
+            {
+                nombre: "LED RGB PARA INTERIOR",
+                imagen: "IMAGENES/RGB.jpg",
+                descripcion: "Sistema RGB con diferentes colores.",
+                precio: "S/ 40"
+            },
+            {
+                nombre: "BARRA 12 LEDS ",
+                imagen: "IMAGENES/BARRA LED.jpg",
+                descripcion: "Barra LED de alta potencia.",
+                precio: "S/ 65"
+            }
+        ]
+    },
+
+    polarizados: {
+        titulo: "MODELOS DE POLARIZADOS",
+        descripcion: "Diferentes niveles de polarizado para tu vehículo.",
+        modelos: [
+            {
+                nombre: "POLARIZADO CLARO",
+                imagen: "IMAGENES/polarizado-claro.jpg",
+                descripcion: "Protección solar con apariencia discreta.",
+                precio: "S/ 150"
+            },
+            {
+                nombre: "POLARIZADO MEDIO",
+                imagen: "IMAGENES/polarizado-medio.jpg",
+                descripcion: "Equilibrio entre visibilidad y privacidad.",
+                precio: "S/ 180"
+            },
+            {
+                nombre: "POLARIZADO OSCURO",
+                imagen: "IMAGENES/polarizado-oscuro.jpg",
+                descripcion: "Mayor privacidad y apariencia deportiva.",
+                precio: "S/ 220"
+            },
+            {
+                nombre: "POLARIZADO CERÁMICO",
+                imagen: "IMAGENES/polarizado-ceramico.jpg",
+                descripcion: "Película de mayor calidad y protección solar.",
+                precio: "S/ 350"
+            }
+        ]
+    },
+
+    asientos: {
+        titulo: "MODELOS DE CUBREASIENTOS",
+        descripcion: "Personaliza y protege los asientos de tu vehículo.",
+        modelos: [
+            {
+                nombre: "CUERO NEGRO UNIVERSAL",
+                imagen: "IMAGENES/CUERO NEGRO.jpg",
+                descripcion: "Diseño elegante en cuero sintético negro de 5 piezas.",
+                precio: "S/ 175"
+            },
+            {
+                nombre: "CUERO NEGRO Y ROJO",
+                imagen: "IMAGENES/NEGRO ROJO.jpg",
+                descripcion: "Diseño con detalles rojos.",
+                precio: "S/ 160"
+            },
+            {
+                nombre: "CUERO NEGRO UNIVERSAL",
+                imagen: "IMAGENES/3 FILAS.jpg",
+                descripcion: "Acabado premium para una apariencia elegante para autos de 3 filas.",
+                precio: "S/ 250"
+            },
+            {
+                nombre: "CUERO NEGRO CON BEIGE UNIVERSAL",
+                imagen: "IMAGENES/NEGRO Y BEIGE.jpg",
+                descripcion: "Modelo adaptable a diferentes vehículos.",
+                precio: "S/ 120"
+            }
+        ]
+    },
+
+    equipaje: {
+        titulo: "MODELOS DE PORTA EQUIPAJE",
+        descripcion: "Más espacio para tus viajes y actividades.",
+        modelos: [
+            {
+                nombre: "BARRAS DE TECHO UNIVERSAL",
+                imagen: "IMAGENES/BARRA DE TECHO 1.jpg",
+                descripcion: "Barras resistentes para transportar equipaje.",
+                precio: "S/ 250"
+            },
+            {
+                nombre: "CAJA DE TECHO UNIVERSAL ",
+                imagen: "IMAGENES/CAJA DE TECHO 1.jpg",
+                descripcion: "Caja cerrada para transportar equipaje de 420 LT.",
+                precio: "S/ 650"
+            },
+            {
+                nombre: "PORTABICICLETAS UNIVERSAL",
+                imagen: "IMAGENES/PORTABICICLETAS.jpg",
+                descripcion: "Sistema para transportar bicicletas.",
+                precio: "S/ 350"
+            }
+        ]
+    },
+
+    adornos: {
+        titulo: "MODELOS DE ADORNOS",
+        descripcion: "Adornos y detalles para personalizar tu vehículo.",
+        modelos: [
+            {
+                nombre: "ADORNO PARA TABLERO AMERICAN BULLY",
+                imagen: "IMAGENES/ADORNO 1.jpg",
+                descripcion: "Detalles decorativos para mejorar el el estilo del tablero.",
+                precio: "S/ 50"
+            },
+            {
+                nombre: "ADORNOS PARA TABLERO HULK",
+                imagen: "IMAGENES/ADORNO 2.jpg",
+                descripcion: "Accesorios decorativos para mejorar el estilo del tablero.",
+                precio: "S/ 50"
+            },
+            {
+                nombre: "COLGANTE DE CORAZON UNIVERSAL",
+                imagen: "IMAGENES/ADORNO 3.jpg",
+                descripcion: "Conjunto de adornos para personalizar el vehículo.",
+                precio: "S/ 15"
+            },
+            {
+                nombre: "ADORNOS PARA TABLERO PANDA SKY",
+                imagen: "IMAGENES/ADORNO 4.jpg",
+                descripcion: "Acabado premium para un estilo más elegante.",
+                precio: "S/ 50"
+            }
+        ]
+    },
+
+    alerones: {
+        titulo: "MODELOS DE ALERONES",
+        descripcion: "Alerones deportivos para personalizar tu vehículo.",
+        modelos: [
+            {
+                nombre: "ALERÓN UNIVERSAL",
+                imagen: "IMAGENES/spoiler-universal.jpg",
+                descripcion: "Modelo adaptable a diferentes vehículos.",
+                precio: "S/ 350"
+            },
+            {
+                nombre: "ALERÓN DEPORTIVO",
+                imagen: "IMAGENES/spoiler-deportivo.jpg",
+                descripcion: "Diseño deportivo para vehículos modernos.",
+                precio: "S/ 450"
+            },
+            {
+                nombre: "ALERÓN PREMIUM",
+                imagen: "IMAGENES/spoiler-premium.jpg",
+                descripcion: "Acabado premium para personalización.",
+                precio: "S/ 650"
+            }
+        ]
+    },
+
+    pantallas: {
+        titulo: "MODELOS DE PANTALLAS",
+        descripcion: "Tecnología multimedia para tu vehículo.",
+        modelos: [
+            {
+                nombre: "PANTALLA 7 PULGADAS",
+                imagen: "IMAGENES/7 PULGADAS.jpg",
+                descripcion: "Pantalla multimedia compacta.",
+                precio: "S/ 450"
+            },
+            {
+                nombre: "PANTALLA 9 PULGADAS",
+                imagen: "IMAGENES/9 PULGADAS.jpg",
+                descripcion: "Pantalla grande para entretenimiento y navegación.",
+                precio: "S/ 650"
+            },
+            {
+                nombre: "PANTALLA ANDROID 10 PULGADAS",
+                imagen: "IMAGENES/10.jpg",
+                descripcion: "Sistema multimedia con Android.",
+                precio: "S/ 800"
+            },
+            {
+                nombre: "PANTALLA PREMIUM ANDROID 13 PULGADAS",
+                imagen: "IMAGENES/13 PULGADAS.jpg",
+                descripcion: "Sistema multimedia avanzado. 8 GB DE RAM 128 GB ",
+                precio: "S/ 1,100"
+            }
+        ]
+    },
+
+    perillas: {
+        titulo: "MODELOS DE PERILLAS",
+        descripcion: "Perillas deportivas y personalizadas para mejorar el estilo interior.",
+        modelos: [
+            {
+                nombre: "PERILLA DEPORTIVA RACING NEGRO CON ROJO",
+                imagen: "IMAGENES/PERILLA 1.jpg",
+                descripcion: "Perilla deportiva para darle un estilo moderno.",
+                precio: "S/ 80"
+            },
+            {
+                nombre: "PERILLA DE CUERO NEGRO",
+                imagen: "IMAGENES/PERILLA 2.jpg",
+                descripcion: "Perilla con acabado de cuero.",
+                precio: "S/ 100"
+            },
+            {
+                nombre: "PERILLA LED",
+                imagen: "IMAGENES/PERILLA 3.jpg",
+                descripcion: "Perilla con iluminación LED.",
+                precio: "S/ 80"
+            },
+            {
+                nombre: "PERILLA SPARCO RACING NEGRO",
+                imagen: "IMAGENES/PERILLA 4.jpg",
+                descripcion: "Modelo premium para personalizar el interior.",
+                precio: "S/ 70"
+            }
+        ]
+    },
+
+    aros: {
+        titulo: "MODELOS DE AROS DEPORTIVOS",
+        descripcion: "Diferentes diseños para darle estilo a tu vehículo.",
+        modelos: [
+            {
+                nombre: "ARO 15 X 6 BLACK CON BLUE ",
+                imagen: "IMAGENES/ARO 1.jpg",
+                descripcion: "Diseño deportivo de 15 pulgadas.",
+                precio: "S/ 900"
+            },
+            {
+                nombre: "ARO 16 X 7 BLACK",
+                imagen: "IMAGENES/ARO.jpg",
+                descripcion: "Diseño moderno de 16 pulgadas.",
+                precio: "S/ 1,100"
+            },
+            {
+                nombre: "ARO 17 X 8 MAG BLACK",
+                imagen: "IMAGENES/ARO 3.jpg",
+                descripcion: "Diseño deportivo de 17 pulgadas.",
+                precio: "S/ 1,400"
+            },
+            {
+                nombre: "ARO 18 X 9 SPORT BLACK",
+                imagen: "IMAGENES/ARO 4.jpg",
+                descripcion: "Diseño premium de 18 pulgadas.",
+                precio: "S/ 1,800"
+            }
+        ]
+    },
+
+    spoilers: {
+        titulo: "MODELOS DE SPOILERS",
+        descripcion: "Personaliza la apariencia deportiva de tu vehículo.",
+        modelos: [
+            {
+                nombre: "SPOILER UNIVERSAL NEGRO MATE",
+                imagen: "IMAGENES/SPOILER 1.jpg",
+                descripcion: "Modelo adaptable a diferentes vehículos.",
+                precio: "S/ 350"
+            },
+            {
+                nombre: "SPOILER DEPORTIVO UNIVERSAL NEGRO  BRILLO",
+                imagen: "IMAGENES/SPOILER 2.jpg",
+                descripcion: "Diseño deportivo para vehículos modernos.",
+                precio: "S/ 450"
+            },
+            {
+                nombre: "SPOILER UNIVERSAL CHICO FIBRA NEGRO",
+                imagen: "IMAGENES/SPOILER 3.jpg",
+                descripcion: "Acabado premium para personalización.",
+                precio: "S/ 650"
+            }
+        ]
+    },
+
+    volantes: {
+        titulo: "MODELOS DE VOLANTES",
+        descripcion: "Volantes deportivos para personalizar tu vehículo.",
+        modelos: [
+            {
+                nombre: "VOLANTE DEPORTIVO 12.6O PULGADAS",
+                imagen: "IMAGENES/VOLANTE 1.jpg",
+                descripcion: "Diseño deportivo para una apariencia moderna.",
+                precio: "S/ 250"
+            },
+            {
+                nombre: "VOLANTE UNIVERSAL MOMO NEGRO",
+                imagen: "IMAGENES/VOLANTE 2.jpg",
+                descripcion: "Volante con acabado de cuero.",
+                precio: "S/ 350"
+            },
+            {
+                nombre: "VOLANTE DEPOTIVO UNIVERSAL 402 NEGRO CON BLANCO",
+                imagen: "IMAGENES/VOLANTE 3.jpg",
+                descripcion: "Modelo premium con acabado deportivo.",
+                precio: "S/ 500"
+            }
+        ]
+    },
+
+    alfombras: {
+        titulo: "MODELOS DE ALFOMBRAS",
+        descripcion: "Protege el interior de tu vehículo.",
+        modelos: [
+            {
+                nombre: "ALFOMBRA UNIVERSAL SPARCO NEGRO",
+                imagen: "IMAGENES/PISO 1.jpg",
+                descripcion: "Modelo adaptable para diferentes vehículos 4 piezas.",
+                precio: "S/ 100"
+            },
+            {
+                nombre: "ALFOMBRA UNIVERSAL SPARCO NEGRO 2",
+                imagen: "IMAGENES/PISO 2.jpg",
+                descripcion: "Fácil de limpiar y resistente.",
+                precio: "S/ 150"
+            },
+            {
+                nombre: "ALFOMBRA UNIVERSAL SPARCO NEGRO CON ROJO ",
+                imagen: "IMAGENES/PISO 3.jpg",
+                descripcion: "Acabado premium y diseño personalizado.",
+                precio: "S/ 250"
+            }
+        ]
+    }
+};
+
+
+/* ABRIR MODELOS */
+
+function abrirModal(tipo) {
+
+    const accesorio = accesorios[tipo];
+
+    if (!accesorio) {
+        alert("No se encontró este accesorio.");
+        console.error("Accesorio no encontrado:", tipo);
+        return;
+    }
+
+    let html = `
+        <div class="modal-titulo">
+            <h2>${accesorio.titulo}</h2>
+            <p>${accesorio.descripcion}</p>
+        </div>
+
+        <div class="modelos">
+    `;
+
+    accesorio.modelos.forEach((modelo, indice) => {
+
+        html += `
+            <div class="modelo">
+
+                <img src="${modelo.imagen}" 
+                     alt="${modelo.nombre}">
+
+                <div class="modelo-info">
+
+                    <h3>${modelo.nombre}</h3>
+
+                    <p>${modelo.descripcion}</p>
+
+                    <span class="modelo-precio">
+                        ${modelo.precio}
+                    </span>
+
+                    <button class="btn-detalle"
+                        onclick="abrirDetalle('${tipo}', ${indice})">
+                        VER DETALLE
+                    </button>
+
+                </div>
+            </div>
+        `;
+    });
+
+    html += `</div>`;
+
+    contenidoModal.innerHTML = html;
+
+    modal.style.display = "block";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* CERRAR MODELOS */
+
+function cerrarModal() {
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+/* CERRAR AL HACER CLICK AFUERA */
+
+function cerrarFuera(event) {
+
+    if (event.target === modal) {
+        cerrarModal();
+    }
+}
+
+
+/* ESC PARA CERRAR */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        cerrarModal();
+        cerrarDetalle();
+    }
+
+});
+
+
+/* MODAL DE DETALLE */
+
+const detalleModal = document.createElement("div");
+
+detalleModal.id = "detalleModal";
+
+detalleModal.className = "modal";
+
+detalleModal.innerHTML = `
+    <div class="modal-contenido detalle-contenido">
+
+        <span class="cerrar"
+              onclick="cerrarDetalle()">
+            &times;
+        </span>
+
+        <div id="contenidoDetalle"></div>
+
+    </div>
+`;
+
+document.body.appendChild(detalleModal);
+
+const contenidoDetalle =
+    document.getElementById("contenidoDetalle");
+
+
+/* ABRIR DETALLE */
+
+function abrirDetalle(tipo, indice) {
+
+    const accesorio = accesorios[tipo];
+
+    if (!accesorio) return;
+
+    const modelo = accesorio.modelos[indice];
+
+    if (!modelo) return;
+
+    contenidoDetalle.innerHTML = `
+
+        <div class="detalle-grid">
+
+            <div>
+                <img 
+                    src="${modelo.imagen}"
+                    alt="${modelo.nombre}"
+                >
+            </div>
+
+            <div class="detalle-info">
+
+                <h2>${modelo.nombre}</h2>
+
+                <p>
+                    ${modelo.descripcion}
+                </p>
+
+                <div class="detalle-dato">
+                    <strong>Categoría:</strong>
+                    ${accesorio.titulo}
+                </div>
+
+                <div class="detalle-dato">
+                    <strong>Precio:</strong>
+                    ${modelo.precio}
+                </div>
+
+                <div class="detalle-dato">
+                    <strong>Disponibilidad:</strong>
+                    Disponible
+                </div>
+
+                <button 
+                    class="btn-modelos"
+                    onclick="cerrarDetalle()">
+                    CERRAR
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    detalleModal.style.display = "block";
+}
+
+
+/* CERRAR DETALLE */
+
+function cerrarDetalle() {
+
+    detalleModal.style.display = "none";
+}
+
+
+/* CERRAR DETALLE HACIENDO CLICK AFUERA */
+
+detalleModal.addEventListener("click", function(event) {
+
+    if (event.target === detalleModal) {
+        cerrarDetalle();
+    }
+
+});
+
+</script>
+    </script>
+    
+
+</body>
+
+</html>
+```
